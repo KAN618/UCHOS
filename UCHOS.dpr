@@ -8,7 +8,8 @@ uses
   U_find in 'U_find.pas' {F_find},
   Vcl.Themes,
   Vcl.Styles,
-  U_img in 'U_img.pas' {F_img};
+  U_img in 'U_img.pas' {F_img},
+  U_FIO in 'U_FIO.pas' {F_FIO};
 
 {$R *.res}
 
@@ -18,6 +19,7 @@ begin
   Application.Title := 'Ó÷åò ÎÑ';
   TStyleManager.TrySetStyle('Golden Graphite');
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TF_FIO, F_FIO);
   Application.Run;
 
 end.

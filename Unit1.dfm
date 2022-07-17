@@ -68,7 +68,7 @@ object Form1: TForm1
     BevelOuter = bvLowered
     TabOrder = 1
     object Button3: TButton
-      Left = 76
+      Left = 132
       Top = 13
       Width = 105
       Height = 25
@@ -77,7 +77,7 @@ object Form1: TForm1
       OnClick = Button3Click
     end
     object B_add: TButton
-      Left = 184
+      Left = 240
       Top = 13
       Width = 45
       Height = 25
@@ -86,7 +86,7 @@ object Form1: TForm1
       OnClick = B_addClick
     end
     object B_del: TButton
-      Left = 232
+      Left = 288
       Top = 13
       Width = 45
       Height = 25
@@ -97,7 +97,7 @@ object Form1: TForm1
     object Edit1: TEdit
       Left = 11
       Top = 16
-      Width = 54
+      Width = 115
       Height = 19
       TabOrder = 3
       OnChange = Edit1Change
@@ -420,11 +420,15 @@ object Form1: TForm1
         Caption = #1057#1087#1080#1089#1086#1082' '#1085#1072' '#1087#1077#1088#1077#1076#1072#1095#1091' '#1087#1086' R12'
         OnClick = R121Click
       end
+      object N7: TMenuItem
+        Caption = #1057#1087#1080#1089#1086#1082' '#1060#1048#1054' '#1080' '#1052#1054#1051
+        OnClick = N7Click
+      end
     end
   end
   object DB: TIBDatabase
     Connected = True
-    DatabaseName = 'E:\KAN\Delphi\UCHOS\UCHOS'
+    DatabaseName = 'D:\KAN\Delphi\UCHOS\UCHOS'
     Params.Strings = (
       'user_name=SYSDBA'
       'password=masterkey'
@@ -437,7 +441,6 @@ object Form1: TForm1
     Top = 208
   end
   object Tran1: TIBTransaction
-    Active = True
     DefaultDatabase = DB
     Params.Strings = (
       'read_committed'
@@ -506,7 +509,6 @@ object Form1: TForm1
       'Where D_ID=:OLD_D_ID')
     ParamCheck = True
     UniDirectional = False
-    Active = True
     Left = 160
     Top = 208
     object DSet1D_ID: TIntegerField

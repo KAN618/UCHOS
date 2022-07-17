@@ -1,2 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.558,=D:\KAN\Delphi\UCHOS\Git_UCHOS\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.015,D:\KAN\Delphi\UCHOS\Git_UCHOS\U_FIO.pas=D:\KAN\Delphi\UCHOS\Git_UCHOS\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.015,D:\KAN\Delphi\UCHOS\Git_UCHOS\U_FIO.dfm=D:\KAN\Delphi\UCHOS\Git_UCHOS\Unit2.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

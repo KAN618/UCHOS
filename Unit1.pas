@@ -71,6 +71,7 @@ type
     Edit1: TEdit;
     DSet1D_PEREDANO: TIntegerField;
     DBRadioGroup1: TDBRadioGroup;
+    N7: TMenuItem;
         procedure FormCreate(Sender: TObject);
         procedure FormDestroy(Sender: TObject);
         procedure Button2Click(Sender: TObject);
@@ -93,6 +94,7 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure N7Click(Sender: TObject);
     private
         { Private declarations }
     public
@@ -112,7 +114,7 @@ var
     function SimpSQL(SQL:string;D:TIBDATABASE ;T:TIBTransaction):string;
 implementation
 
-uses U_ini, U_edit, U_find;
+uses U_ini, U_edit, U_find, U_FIO;
 {$R *.dfm}
 
 function FileVersion(const FileName: TFileName): String;
@@ -145,6 +147,7 @@ var
     Q:TIBQuery;
     TrNil:boolean;
 begin
+  TrNil:= False;
   try
     if not D.Connected then exit;
     if T=nil then
@@ -387,6 +390,8 @@ begin
     if length(iddoc)>0 then  Form1.DSet1.FieldByName('D_ID').AsInteger:=strtoint(iddoc);
     if length(numdoc)>0 then Form1.DSet1.FieldByName('D_NUM').Asstring:='2021_'+numdoc;
     Form1.DSet1.FieldByName('D_DATA').AsDateTime:=now;
+    Form1.DSet1.FieldByName('D_PEREDANO').AsInteger:=0;
+
 end;
 
 procedure TForm1.Edit1Change(Sender: TObject);
@@ -481,6 +486,22 @@ begin
     finally
         FreeAndNil(F);
     end;
+
+
+end;
+
+procedure TForm1.N7Click(Sender: TObject);
+var
+    F: TF_FIO;
+begin
+    try
+        F := TF_FIO.Create(self);
+        F.showmodal;
+    finally
+        FreeAndNil(F);
+    end;
+
+
 
 
 end;
